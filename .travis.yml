@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+- 2.2.5
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:migrate RAILS_ENV=test
+deploy:
+  provider: heroku
+  api_key:
+    secure: DouxXmSoDnpZahBkPUR2JMNXFel1nv3gJlTOrXg2/tDEwDreLbiDfnDKt9uLh1BSQdxM0kExSpOc5AnsVFxv+SEyCtrRKmC4Vkp6dpjV9oyaPbb3Ej1fpc+6CzxtR7ggSyZpJiOVwJDMXL9TB4q4nT81IRe42nnUzf2gPkbzjEmwI8CN7qSLZ6GuV3ycJVgeAcVJnci55tYYmHZVM0ORsHhPpxr89GedejNloRU/HGdXBnj+Scj5OlPb0NyMzKNk5dyF4i0V66wbNvGlweni03NScpmSytxjojXtIWfpPMAZ3ZEiKISqENR/ossLEtPr7iopexBtlzqQdb0yj0OUC2iU4X8h+BUX/xnqoVcuT70p5bjbfQYP++5oeRSoSAn4+Ilc2EjHgxs4wSixZuduG5KKQThPcj6TI0k63H1kB34hbO2/YyvqN6v0eGVK0qIOXDD3OFIe8ENK6kdzMRnKEy7cBS6KIVQvHR6yx9r5wqWbTNCg9oImyEyfJry4cFC2fbi1u/KUzGQLt6lv/ZjfpdR+u2lKQcffjHh0pK+GlsaljFTSuwFq9Q0My+VTQp89vd3c/EeNlMmGGgbxvbnK4XUjltTcpaOL/1NuNaaWGkeQaEIE2Zqv6QGNodQ8LE/lNEFFxfNlbyV1hq6IZGnmcXE4bLNfQXvpjQP3PX4fYpA=
+  app: pacific-cliffs-28132
+  on:
+    repo: maki-n/rails_enpit_2
+    branch: maki-n
