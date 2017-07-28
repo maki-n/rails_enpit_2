@@ -1,0 +1,5 @@
+<h2>目次</h2>
+<p>
+時刻：<%= Time.now %>
+</p>
+<a href="/wordbooks
