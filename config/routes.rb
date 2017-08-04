@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :jankens
+  resources :janken_results
+  resources :jankens
   resources :wordbooks
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

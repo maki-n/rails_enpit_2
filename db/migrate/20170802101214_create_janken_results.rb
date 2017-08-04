@@ -1,0 +1,10 @@
+class CreateJankenResults < ActiveRecord::Migration
+  def change
+    create_table :janken_results do |t|
+      t.integer :your_hand
+      t.string :result
+
+      t.timestamps null: false
+    end
+  end
+end

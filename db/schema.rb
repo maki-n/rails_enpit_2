@@ -11,16 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727053105) do
+ActiveRecord::Schema.define(version: 20170804081455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "flashcards", force: :cascade do |t|
-    t.string   "jp"
-    t.string   "en"
+  create_table "janken_results", force: :cascade do |t|
+    t.integer  "your_hand"
+    t.string   "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "jankens", force: :cascade do |t|
+    t.integer  "your_hand"
+    t.string   "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kanri_tables", force: :cascade do |t|
+    t.string   "user_id"
+    t.string   "password"
+    t.string   "user_name"
+    t.string   "mail_address"
+    t.integer  "TEL"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "wordbooks", force: :cascade do |t|

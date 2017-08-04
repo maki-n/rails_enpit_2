@@ -1,0 +1,25 @@
+<%= form_for(@janken_result) do |f| %>
+  <% if @janken_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@janken_result.errors.count, "error") %> prohibited this janken_result from being saved:</h2>
+
+      <ul>
+      <% @janken_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :your_hand %><br>
+    <%= f.number_field :your_hand %>
+  </div>
+  <div class="field">
+    <%= f.label :result %><br>
+    <%= f.text_field :result %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
