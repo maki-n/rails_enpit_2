@@ -69,6 +69,6 @@ class JankensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def janken_params
-      params.require(:janken).permit(:judge)
+      params.require(:janken).permit(:your_hand, :result)
     end
 end

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :kanri_tables
+  resources :jankens
   resources :janken_results
   resources :jankens
   resources :wordbooks

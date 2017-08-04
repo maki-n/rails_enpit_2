@@ -18,7 +18,7 @@ class JankensControllerTest < ActionController::TestCase
 
   test "should create janken" do
     assert_difference('Janken.count') do
-      post :create, janken: { judge: @janken.judge }
+      post :create, janken: { result: @janken.result, your_hand: @janken.your_hand }
     end
 
     assert_redirected_to janken_path(assigns(:janken))
@@ -35,7 +35,7 @@ class JankensControllerTest < ActionController::TestCase
   end
 
   test "should update janken" do
-    patch :update, id: @janken, janken: { judge: @janken.judge }
+    patch :update, id: @janken, janken: { result: @janken.result, your_hand: @janken.your_hand }
     assert_redirected_to janken_path(assigns(:janken))
   end
 
