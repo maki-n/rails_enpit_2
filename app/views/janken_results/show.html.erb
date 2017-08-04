@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Your hand:</strong>
+  <%= @janken_result.your_hand %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @janken_result.result %>
+</p>
+
+<%= link_to 'Edit', edit_janken_result_path(@janken_result) %> |
+<%= link_to 'Back', janken_results_path %>

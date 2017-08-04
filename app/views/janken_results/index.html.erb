@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Janken Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Your hand    </th>
+      <th>Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @janken_results.each do |janken_result| %>
+      <tr>
+        <td><%= janken_result.your_hand %></td>
+        <td><%= janken_result.result %></td>
+        <td><%= link_to 'Show', janken_result %></td>
+        <td><%= link_to 'Edit', edit_janken_result_path(janken_result) %></td>
+        <td><%= link_to 'Destroy', janken_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Start Janken', new_janken_result_path %>
