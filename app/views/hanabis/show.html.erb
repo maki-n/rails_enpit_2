@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hanabi.name %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @hanabi.data %>
+</p>
+
+<%= link_to 'Edit', edit_hanabi_path(@hanabi) %> |
+<%= link_to 'Back', hanabis_path %>
