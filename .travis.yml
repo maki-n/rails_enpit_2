@@ -14,4 +14,3 @@ deploy:
   app: pacific-cliffs-28132
   on:
     repo: maki-n/rails_enpit_2
-    branch: maki-n
