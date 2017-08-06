@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :kanri_tables
   resources :hanabis
   resources :wordbooks
   # The priority is based upon order of creation: first created -> highest priority.
