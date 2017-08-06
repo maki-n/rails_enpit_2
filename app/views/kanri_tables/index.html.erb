@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kanri Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Password</th>
+      <th>User name</th>
+      <th>Mail address</th>
+      <th>Tel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kanri_tables.each do |kanri_table| %>
+      <tr>
+        <td><%= kanri_table.user_id %></td>
+        <td><%= kanri_table.password %></td>
+        <td><%= kanri_table.user_name %></td>
+        <td><%= kanri_table.mail_address %></td>
+        <td><%= kanri_table.TEL %></td>
+        <td><%= link_to 'Show', kanri_table %></td>
+        <td><%= link_to 'Edit', edit_kanri_table_path(kanri_table) %></td>
+        <td><%= link_to 'Destroy', kanri_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kanri table', new_kanri_table_path %>
