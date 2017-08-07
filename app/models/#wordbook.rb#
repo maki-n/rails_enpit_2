@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+class Wordbook < ActiveRecord::Base
+  def self.search(search) 
+    if search
+      Wordbook.where(['english LIKE ?', "%#{search}%"])
+    else
+      Wordbook.all #全て表示。
+    end
+  end
+end

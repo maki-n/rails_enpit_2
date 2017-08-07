@@ -1,17 +1,13 @@
 class WordbooksController < ApplicationController
   before_action :set_wordbook, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @projects = Project.search(params[:search])
-  end
-
-
   # GET /wordbooks
   # GET /wordbooks.json
   def index
-    @wordbooks = Wordbook.all
+  # @wordbooks = Wordbook.all
+    @wordbooks = Wordbook.search(params[:search])
   end
-
+ 
   # GET /wordbooks/1
   # GET /wordbooks/1.json
   def show
