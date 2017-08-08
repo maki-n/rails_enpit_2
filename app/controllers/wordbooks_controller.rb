@@ -7,6 +7,13 @@ class WordbooksController < ApplicationController
   # @wordbooks = Wordbook.all
     @wordbooks = Wordbook.search(params[:search])
   end
+
+  def quiz
+    @wordbookquiz = Wordbook.offset(rand(Wordbook.count)).first
+  end
+  def answer
+    @wordbookquiz = Wordbook(params[:wordbook])
+  end
  
   # GET /wordbooks/1
   # GET /wordbooks/1.json

@@ -5,9 +5,10 @@
 <h2>英単語の学習</h2>
 
 <hr>
+<p><%= link_to '英単語テスト', "/wordbooks/quiz" %></p> 
+<hr>
 
-<p><%= link_to 'すべての登録単語を表示する', "/wordbooks" %></p>
-
+<p><%= link_to 'すべての登録単語を表示する', wordbooks_path %></p>
 <P>検索する（英語を入力してください）
 <%= form_tag wordbooks_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
@@ -16,7 +17,7 @@
 </p>
 
 <hr>
-
+<h3>単語一覧</h3>
 <table>
   <thead>
     <tr>
@@ -31,9 +32,9 @@
       <tr>
         <td><%= wordbook.japanese %></td>
         <td><%= wordbook.english %></td>
-        <td><%= link_to 'Show', wordbook %></td>
-        <td><%= link_to 'Edit', edit_wordbook_path(wordbook) %></td>
-        <td><%= link_to 'Destroy', wordbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '確認', wordbook %></td>
+        <td><%= link_to '修正', edit_wordbook_path(wordbook) %></td>
+        <td><%= link_to '削除', wordbook, method: :delete, data: { confirm: '削除しますか' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,8 +42,8 @@
 
 <br>
 
-<%= link_to 'New Wordbook', new_wordbook_path %>
+<%= link_to '新規単語登録', new_wordbook_path %>
 
 <hr>
 
-<p><%= link_to 'グループ０目次', "/" %></p>
+<p><%= link_to 'グループ０目次に戻る', root_path %></p>
