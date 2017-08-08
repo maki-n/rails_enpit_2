@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Japanese:</strong>
+  <strong>日本語:</strong>
   <%= @wordbook.japanese %>
 </p>
 
 <p>
-  <strong>English:</strong>
+  <strong>英語:</strong>
   <%= @wordbook.english %>
 </p>
 
-<%= link_to 'Edit', edit_wordbook_path(@wordbook) %> |
-<%= link_to 'Back', wordbooks_path %>
+<%= link_to '修正', edit_wordbook_path(@wordbook) %> |
+<%= link_to '単語一覧に戻る', wordbooks_path %>
