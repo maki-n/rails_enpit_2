@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :kanri_tables
   resources :hanabis
   get 'wordbooks/quiz'
-  get 'wordbooks/answer'
   resources :wordbooks
 
   # The priority is based upon order of creation: first created -> highest priority.

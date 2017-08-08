@@ -8,13 +8,13 @@
 <p><%= link_to '英単語テスト', "/wordbooks/quiz" %></p> 
 <hr>
 
-<p><%= link_to 'すべての登録単語を表示する', wordbooks_path %></p>
 <P>検索する（英語を入力してください）
 <%= form_tag wordbooks_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "検索", :english => nil %>
 <% end %>
 </p>
+<p><%= link_to 'すべての登録単語を表示する', wordbooks_path %></p>
 
 <hr>
 <h3>単語一覧</h3>
