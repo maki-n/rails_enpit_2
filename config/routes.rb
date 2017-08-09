@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jankens
   resources :kanri_tables
   resources :hanabis
   get 'wordbooks/quiz'
