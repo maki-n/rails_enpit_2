@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Your hand:</strong>
+  <%= @janken.your_hand %>
+</p>
+
+<p>
+  <strong>Cpu hand:</strong>
+  <%= @janken.cpu_hand %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @janken.result %>
+</p>
+
+<%= link_to 'Edit', edit_janken_path(@janken) %> |
+<%= link_to 'Back', jankens_path %>
