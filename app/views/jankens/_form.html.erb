@@ -14,7 +14,11 @@
   <div class="field">
     <%= f.label :your_hand %><br>
     <%= f.number_field :your_hand %>
+    <% player_hand = #{params[:your_hand]} %>
   </div>
+<%
+=begin
+%>
   <div class="field">
     <%= f.label :cpu_hand %><br>
     <%= f.number_field :cpu_hand %>
@@ -22,8 +26,29 @@
   <div class="field">
     <%= f.label :result %><br>
     <%= f.text_field :result %>
-  </div>
+ </div>
+<%
+=end
+%>
   <div class="actions">
+      <% cpu_hand = rand(3) %>
+
+      <% if player_hand == cpu_hand then %>
+        <% result = 'あいこです' %>
+<%
+=begin
+%>
+      <% else if (player_hand == 0 && cpu_hand == 1) || (player_hand == 1 && cpu_hand == 2) || (player_hand == 2 && cpu_hand == 0) %>
+        <% result ='あなたの勝ち' %>
+      <% else %>
+        <% result ='あなたの負け' %>
+      <% end %>
+<%
+=end
+%>
+      <% end %>
+      <% params[:cpu_hand] = cpu_hand %>
+      <% params[:result] = "abc" %>
     <%= f.submit %>
   </div>
 <% end %>
